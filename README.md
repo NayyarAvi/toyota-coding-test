@@ -13,22 +13,26 @@ This project is a Spark-based batch processing framework that performs an ETL (E
 │   │   │   ├── com
 │   │   │   │   ├── spark
 │   │   │   │   │   ├── java
-│   │   │   │   │   │   ├── App.java
 │   │   │   │   │   │   ├── config
 │   │   │   │   │   │   │   └── AppConfig.java
 │   │   │   │   │   │   ├── job
 │   │   │   │   │   │   │   ├── BatchJob.java
 │   │   │   │   │   │   │   └── IMDBMoviesJob.java
+│   │   │   │   │   │   ├── util
+│   │   │   │   │   │   │   └── FileUtils.java
+│   │   │   │   │   │   ├── App.java
 │   ├── test
 │   │   ├── java
 │   │   │   ├── com
 │   │   │   │   ├── spark
 │   │   │   │   │   ├── java
-│   │   │   │   │   │   ├── AppTest.java
 │   │   │   │   │   │   ├── config
 │   │   │   │   │   │   │   └── AppConfigTest.java
 │   │   │   │   │   │   ├── job
 │   │   │   │   │   │   │   └── BatchJobTest.java
+│   │   │   │   │   │   │   └── IMDBMoviesJobTest.java
+│   │   │   │   │   │   ├── util
+│   │   │   │   │   │   │   └── FileUtilsTest.java
 ├── pom.xml
 ├── application.conf
 ├── README.md
