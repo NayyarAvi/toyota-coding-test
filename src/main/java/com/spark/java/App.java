@@ -18,10 +18,13 @@ public abstract class App {
     public static void main(String[] args) {
         SparkSession spark = null;
         try {
+            // fetching the master value
+            String master = (args.length > 0) ? args[0] : AppConfig.get("spark.master");
+
             // Initializing the SparkSession
             spark = SparkSession.builder()
                     .appName(AppConfig.get("spark.app.name"))
-                    .master(AppConfig.get("spark.master"))
+                    .master(master)
                     .getOrCreate();
             System.out.println("Spark Session initialized successfully.");
             IMDBMoviesJob job = new IMDBMoviesJob(spark);
