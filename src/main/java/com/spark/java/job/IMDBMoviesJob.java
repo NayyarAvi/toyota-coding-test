@@ -115,8 +115,8 @@ public class IMDBMoviesJob extends BatchJob {
      */
     private void creditedPersons() {
         /**
-        Splitting the 'knownForTitles' column into an array to handle multiple movie titles listed in a single cell,
-        and then exploding the array to create individual rows for each title.
+         * Splitting the 'knownForTitles' column into an array to handle multiple movie titles listed in a single cell,
+         * and then exploding the array to create individual rows for each title.
         */
         nameBasicsDf = nameBasicsDf
                 .withColumn("knownForTitlesArray", functions.split(functions.col("knownForTitles"), ","))

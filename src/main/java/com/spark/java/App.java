@@ -31,7 +31,10 @@ public abstract class App {
 
             // Running the job to execute the ETL process.
             job.run();
+        } catch (IllegalArgumentException e) {
+            System.err.println("Input Validation Error: " + e.getMessage());
         } catch (Exception e) {
+            System.err.println("An unexpected error occurred: " + e.getMessage());
             e.printStackTrace();
         } finally {
             if (spark != null) {

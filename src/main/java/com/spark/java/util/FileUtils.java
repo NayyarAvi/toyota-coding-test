@@ -35,7 +35,6 @@ public class FileUtils {
         } catch (Exception e) {
             throw new RuntimeException("Error reading file: " + filePath, e);
         }
-
     }
 
     /**
