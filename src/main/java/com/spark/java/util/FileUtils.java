@@ -4,9 +4,11 @@ import org.apache.spark.sql.Dataset;
 import org.apache.spark.sql.Row;
 import org.apache.spark.sql.SparkSession;
 
+import java.io.File;
+
 public class FileUtils {
     /**
-     * The readFile method reads a CSV file into a Spark Dataframe.
+     * This method reads a CSV file into a Spark Dataframe.
      *
      * @param spark The SparkSession to interact with Spark.
      * @param filePath The path of the CSV file to read.
@@ -14,21 +16,40 @@ public class FileUtils {
      * @return A Dataset<Row> representing the contents of the CSV file.
      */
     public static Dataset<Row> readFile(SparkSession spark, String filePath, String delimiter) {
-        return spark.read()
-                .option("inferSchema", "true")
-                .option("header", "true")
-                .option("sep", delimiter)
-                .csv(filePath);
+        try {
+            // Check if the file exists and is readable
+            File file = new File(filePath);
+            if (!file.exists()) {
+                throw new IllegalArgumentException("File not found: " + filePath);
+            }
+            if (!file.canRead()) {
+                throw new IllegalArgumentException("File is not readable: " + filePath);
+            }
+
+            // Reading the file
+            return spark.read()
+                    .option("inferSchema", "true")
+                    .option("header", "true")
+                    .option("sep", delimiter)
+                    .csv(filePath);
+        } catch (Exception e) {
+            throw new RuntimeException("Error reading file: " + filePath, e);
+        }
+
     }
 
     /**
-     * The writeJsonFile method writes a Spark Dataset to a JSON file.
+     * This method writes a Spark Dataset to a JSON file.
      *
      * @param df The Dataset<Row> to be written to a file.
      * @param mode The write mode (e.g., "overwrite" or "append") for the output file.
      * @param filePath The path where the JSON file should be saved.
      */
     public static void writeJsonFile(Dataset<Row> df, String mode, String filePath) {
-        df.write().mode(mode).json(filePath);
+        try {
+            df.write().mode(mode).json(filePath);
+        } catch (Exception e) {
+            throw new RuntimeException("Error writing to file: " + filePath, e);
+        }
     }
 }

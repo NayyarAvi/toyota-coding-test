@@ -97,6 +97,8 @@ public class IMDBMoviesJob extends BatchJob {
     }
 
     /**
+     * Use Case 1: Retrieve the top 10 movies
+     *
      * The top10Movies method outputs the top 10 movies to a JSON file and displays them.
      */
     private void top10Movies() {
@@ -106,6 +108,8 @@ public class IMDBMoviesJob extends BatchJob {
     }
 
     /**
+     * Use Case 2: list the persons who are most often credited for top 10 movies
+     *
      * The creditedPersons method identifies and outputs the credited persons for the top 10 movies.
      * The resulting dataset of credited persons is written to a JSON file.
      */
@@ -130,6 +134,8 @@ public class IMDBMoviesJob extends BatchJob {
     }
 
     /**
+     * Use Case 3: list the different titles of the top 10 movies
+     *
      * The differentTitles method identifies and outputs different titles for the top 10 movies.
      */
     private void differentTitles() {
