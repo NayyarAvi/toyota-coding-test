@@ -1,7 +1,7 @@
 
 # Spark Batch Job Framework
 
-This project is a Spark-based batch processing framework that performs an ETL (Extract, Transform, Load) pipeline for processing IMDB movie data. It extracts data from TSV files, performs transformations to rank movies, identifies credited persons, and outputs the results to JSON files.
+This project is a Spark-based batch processing framework that performs an ETL (Extract, Transform, Load) pipeline for processing IMDB movie data. It extracts data from TSV files, performs transformations to rank movies, identifies credited persons, as well as fetch different titles of the movies and outputs the results to JSON files.
 
 ## Project Structure
 
@@ -106,7 +106,7 @@ Run the application using the `spark-submit` command. Pass the `master` value ei
 ```bash
 spark-submit \
   --class com.spark.java.App \
-  --master local[*] \
+  --master "local[*]" \
   target/spark-java-test-1.0-jar-with-dependencies.jar
 ```
 
