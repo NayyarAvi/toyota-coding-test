@@ -1,0 +1,11 @@
+nconst	primaryName	birthYear	deathYear	primaryProfession	knownForTitles
+nm0000001	Fred Astaire	1899	1987	actor,miscellaneous,producer	tt0000001,tt0000004
+nm0000002	Lauren Bacall	1924	2014	actress,soundtrack,archive_footage	tt0000002,tt0000003
+nm0000003	Brigitte Bardot	1934	\N	actress,music_department,producer	tt0000005
+nm0000004	John Belushi	1949	1982	actor,writer,music_department	tt0000006
+nm0000005	Ingmar Bergman	1918	2007	writer,director,actor	tt0000007
+nm0000006	Ingrid Bergman	1915	1982	actress,producer,soundtrack	tt0000008
+nm0000007	Humphrey Bogart	1899	1957	actor,producer,miscellaneous	tt0000009
+nm0000008	Marlon Brando	1924	2004	actor,director,writer	tt0000001,tt0000010
+nm0000009	Richard Burton	1925	1984	actor,producer,director	tt0000008,tt0000011
+nm0000010	James Cagney	1899	1986	actor,director,producer	tt0000011,tt0000012,tt0000002
